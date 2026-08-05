@@ -38,6 +38,21 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Playfair Display", serif;
+    color: var(--roxo-texto);
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
 .logo {
     width: 100px;
     border-radius: 50%;
@@ -183,6 +198,23 @@ form {
 
 .social-btn:hover {
     transform: translateY(-5px);
+}
+
+button {
+    background: var(--botao);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+button:hover {
+    background: var(--botao-hover);
+    transform: translateY(-3px);
 }
 
 .google:hover {
