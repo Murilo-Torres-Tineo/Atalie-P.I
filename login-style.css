@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --bg-principal: #F3EAF4;
+
+    --cabecalho: #4D1F62;
+    --roxo-texto: #32154A;
+    --cards: #CFAEDC;
+
+    --botao: #C8A35A;
+    --botao-hover: #B38E47;
+
+    --branco: #FFF;
+    --textinho: #4A4A4A;
+
+    --borda: #E8D7EC;
+    --sombra: rgba(77, 31, 98, .12);
+
+    --transition: .3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-principal);
+    font-family: "Montserrat", sans-serif;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background: var(--branco);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px var(--sombra);
+    text-align: center;
+}
+
+.cadastro-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cadastro-card {
+    width: 100%;
+    max-width: 480px;
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 25px var(--sombra);
+    text-align: center;
+}
+
+.recuperar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.recuperar-card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--branco);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px var(--sombra);
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--cabecalho);
+    font-size: 18px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding-left: 45px;
+    outline: none;
+    transition: var(--transition);
+    font-size: 15px;
+}
+
+.input-box input:focus {
+    border-color: var(--botao);
+}
+
+.checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.checkbox input {
+    margin-top: 4px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--borda);
+}
+
+.divider span {
+    margin: 0 15px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.social-btn {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    color: var(--cabecalho);
+    font-size: 24px;
+    transition: var(--transition);
+    box-shadow: 0 5px 12px var(--sombra);
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+}
+
+.google:hover {
+    background: #DB4437;
+    color: #fff;
+}
+
+.facebook:hover {
+    background: #1877F2;
+    color: #fff;
+}
+
+.instagram:hover {
+    background: #E4405F;
+    color: #fff;
+}
+
+.links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.login-card .links {
+    justify-content: space-between;
+}
+
+.links a {
+    color: var(--cabecalho);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.links a:hover {
+    color: var(--botao);
+}
+
+main {
+    margin-left: 0;
+    padding-left: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:480px) {
+
+    .login-card,
+    .cadastro-card,
+    .recuperar-card {
+        padding: 30px 25px;
+    }
+}
