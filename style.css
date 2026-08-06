@@ -177,6 +177,60 @@ button:hover {
     margin-top: 15px;
 }
 
+#servicos_main {
+    align-content: center;
+    padding: 5%;
+    padding-top: 30px;
+    display: flexbox;
+}
+
+#servicos_main h1 {
+    padding: 0;
+}
+
+.servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card_servicos {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 10px 20px var(--sombra);
+    padding: 25px;
+}
+
+.card_servicos:hover {
+    transform: translateY(-5px);
+    transition: var(--transition);
+}
+
+.overlay {
+    position: relative;
+    width: auto;
+    padding: 10px 0px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    background-color: #32154ac9;
+    border-radius: 10px;
+}
+
+.card_servicos:hover .overlay {
+    opacity: 1;
+}
+
+.card_servicos img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 footer {
     margin-left: 260px;
     background: var(--cabecalho);
