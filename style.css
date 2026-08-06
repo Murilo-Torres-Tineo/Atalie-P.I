@@ -66,6 +66,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    flex: 1;
 }
 
 .menu a {
@@ -157,6 +158,28 @@ button {
 button:hover {
     background: var(--botao-hover);
     transform: translateY(-3px);
+}
+
+.btn-sair {
+    margin-top: auto;
+    width: 100%;
+    padding: 15px 18px;
+    background: var(--botao);
+    color: var(--branco);
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.btn-sair:hover {
+    background: var(--botao-hover);
+    color: var(--branco);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(200, 163, 90, 0.35);
 }
 
 .cards {
