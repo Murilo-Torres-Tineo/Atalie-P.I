@@ -30,11 +30,23 @@ html {
 }
 
 body {
+    background: linear-gradient(135deg,
+
+            #F3EAF4 0%,
+            #F3EAF4 23%,
+
+            #764286 77%,
+            #764286 98%,
+
+            #4D1F62 100%);
+
+    background-size: 150% 150%;
+    animation: gradientMove 12s ease-in-out infinite alternate;
+
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--bg-principal);
     font-family: "Montserrat", sans-serif;
 }
 
