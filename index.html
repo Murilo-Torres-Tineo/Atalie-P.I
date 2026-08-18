@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste do CSS</title>
+    <title>Home | LM Criações</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,7 +19,7 @@
 
             <div class="menu">
                 <a href="index.html">Home</a>
-                <a href="#">Produtos</a>
+                <a href="produtos.html">Produtos</a>
                 <a href="servicos.html">Serviços</a>
                 <a href="#">Contato</a>
                 <a href="Sobre.html">Sobre Nós</a>
@@ -32,76 +32,106 @@
 
     <main>
 
-        <div class="container">
+        <section class="home-hero">
 
-            <section>
-
-                <h1>Ateliê LM Criações</h1>
+            <div class="hero-texto">
+                <h1>Sua História,<br>Nosso Papel.</h1>
 
                 <p>
-                    Produzimos materiais personalizados com qualidade, criatividade e acabamento impecável para tornar
-                    seus projetos ainda mais especiais
+                    Cadernos, Agendas e Papelaria
+                    Personalizada com a Alma do
+                    Nosso Ateliê.
                 </p>
 
-                <button a href="#">Solicitar Orçamento</button>
-                <button a href="#">Ver Produtos</button>
-                
-            </section>
+                <a href="produtos.html" class="btn-colecao">
+                    Explorar a Coleção
+                </a>
+            </div>
 
-            <section>
+            <div class="hero-imagem">
+                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80"
+                    alt="Papelaria personalizada">
+            </div>
 
-                <h2>Cards</h2>
+        </section>
 
-                <div class="cards">
+        <section class="diferenciais">
 
-                    <div class="card">
-                        <h3>Produto 1</h3>
+            <div class="diferencial">
+                <div class="icone">♡</div>
 
-                        <p>
-                            Um exemplo simples utilizando seu componente de card.
-                        </p>
+                <div>
+                    <h3>Artesanal</h3>
+                    <p>
+                        Repletos de detalhes e
+                        carinho artesanal.
+                    </p>
+                </div>
+            </div>
 
-                        <button>Comprar</button>
-                    </div>
+            <div class="diferencial">
+                <div class="icone">♢</div>
 
-                    <div class="card">
-                        <h3>Produto 2</h3>
+                <div>
+                    <h3>Exclusivo</h3>
+                    <p>
+                        Agendas e papelaria
+                        personalizada e exclusiva.
+                    </p>
+                </div>
+            </div>
 
-                        <p>
-                            Observe as bordas, sombras e tipografia.
-                        </p>
+            <div class="diferencial">
+                <div class="icone">♧</div>
 
-                        <button>Detalhes</button>
-                    </div>
+                <div>
+                    <h3>Sustentável</h3>
+                    <p>
+                        Carinho no papel para um
+                        futuro sustentável.
+                    </p>
+                </div>
+            </div>
 
-                    <div class="card">
-                        <h3>Produto 3</h3>
+        </section>
 
-                        <p>
-                            Mais um card para testar a responsividade.
-                        </p>
+        <section id="destaques" class="destaques">
 
-                        <button>Ver mais</button>
-                    </div>
+            <h2>Nossos Destaques</h2>
 
+            <div class="produtos-destaque">
+
+                <div class="produto">
+                    <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=600&q=80"
+                        alt="Diário de sonhos">
+
+                    <h3>Diário de Sonhos</h3>
                 </div>
 
-            </section>
+                <div class="produto">
+                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80"
+                        alt="Cartões">
 
-            <section>
+                    <h3>Cartões Gratidão</h3>
+                </div>
 
-                <h2>Hierarquia dos títulos</h2>
+                <div class="produto">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
+                        alt="Papelaria personalizada">
 
-                <h1>Heading H1</h1>
-                <h2>Heading H2</h2>
-                <h3>Heading H3</h3>
-                <h4>Heading H4</h4>
-                <h5>Heading H5</h5>
-                <h6>Heading H6</h6>
+                    <h3>Papelaria Personalizada</h3>
+                </div>
 
-            </section>
+                <div class="produto">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80"
+                        alt="Caderno roxo">
 
-        </div>
+                    <h3>Agenda Personalizada</h3>
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 

@@ -1,23 +1,17 @@
 /* https://imglink.cc/cdn/tSysD6IzB-.jpg (Imagem da Logo)*/
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
     --bg-principal: #F3EAF4;
-
     --cabecalho: #4D1F62;
     --roxo-texto: #32154A;
     --cards: #CFAEDC;
-
+    --branco: #FFFFFF;
     --botao: #C8A35A;
     --botao-hover: #B38E47;
-
-    --branco: #FFF;
     --textinho: #4A4A4A;
-
     --borda: #E8D7EC;
     --sombra: rgba(77, 31, 98, .12);
-
     --transition: .3s ease;
 }
 
@@ -37,67 +31,6 @@ body {
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
     line-height: 1.6;
-}
-
-header {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 260px;
-    height: 100vh;
-    background: var(--cabecalho);
-    box-shadow: 4px 0 20px var(--sombra);
-}
-
-nav {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 35px 20px;
-}
-
-.logo {
-    width: 90px;
-    margin-bottom: 45px;
-    border-radius: 50px;
-}
-
-.menu {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-}
-
-.menu a {
-    color: white;
-    padding: 15px 18px;
-    border-radius: 12px;
-    font-weight: 500;
-    transition: var(--transition);
-    text-decoration: none;
-}
-
-.menu a:hover {
-    background: rgba(255, 255, 255, .15);
-    color: var(--botao);
-    transform: translateX(8px);
-}
-
-main {
-    margin-left: 260px;
-    padding-left: 30px;
-}
-
-.container {
-    width: 95%;
-    padding: 30px 10px;
-}
-
-section {
-    margin-bottom: 70px;
 }
 
 h1,
@@ -139,22 +72,128 @@ p {
     margin-bottom: 20px;
 }
 
-.Texto-P {
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: var(--cabecalho);
+    box-shadow: 4px 0 20px var(--sombra);
+    z-index: 1000;
+}
+
+nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 20px;
+}
+
+.logo {
+    width: 90px;
+    margin-bottom: 45px;
+    border-radius: 50%;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.menu a {
     color: var(--branco);
-    font-size: 0.7rem;
+    padding: 15px 18px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, .15);
+    color: var(--botao);
+    transform: translateX(8px);
+}
+
+main {
+    margin-left: 260px;
+    padding-left: 30px;
+}
+
+.container {
+    width: 95%;
+    padding: 30px 10px;
+}
+
+section {
+    margin-bottom: 70px;
+}
+
+.home-hero {
+    width: 100%;
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 5% 40px;
+}
+
+.hero-texto {
+    max-width: 450px;
+}
+
+.hero-texto h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-texto p {
+    font-size: 1.15rem;
+    line-height: 1.35;
     margin-bottom: 30px;
 }
 
-button {
+.hero-imagem {
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px var(--sombra);
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.hero-imagem:hover img {
+    transform: scale(1.03);
+}
+
+button,
+.btn-colecao {
     background: var(--botao);
-    color: white;
-    border: none;
+    color: var(--branco);
     border-radius: 8px;
-    padding: 12px 30px;
-    cursor: pointer;
     font-size: 16px;
     font-weight: 600;
+    cursor: pointer;
     transition: var(--transition);
+}
+
+button {
+    border: none;
+    padding: 12px 30px;
 }
 
 button:hover {
@@ -162,92 +201,175 @@ button:hover {
     transform: translateY(-3px);
 }
 
+.btn-colecao {
+    display: inline-block;
+    padding: 13px 25px;
+    border: 2px solid var(--botao);
+    text-decoration: none;
+    background: var(--cabecalho);
+}
+
+.btn-colecao:hover {
+    background: var(--botao);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(200, 163, 90, .30);
+}
+
 .btn-sair {
-    margin-top: auto;
     width: 100%;
+    margin-top: auto;
     padding: 15px 18px;
     background: var(--botao);
     color: var(--branco);
-    text-decoration: none;
-    text-align: center;
-    font-weight: 600;
-    border-radius: 12px;
-    transition: var(--transition);
     border: 2px solid transparent;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
 }
 
 .btn-sair:hover {
     background: var(--botao-hover);
-    color: var(--branco);
-    border-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, .25);
     transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(200, 163, 90, 0.35);
+    box-shadow: 0 8px 18px rgba(200, 163, 90, .35);
 }
 
-.cards {
+.diferenciais {
+    width: 90%;
+    margin: 0 auto 70px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
 }
 
-.card {
-    background: white;
+.diferencial {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background: rgba(255, 255, 255, .75);
     border: 1px solid var(--borda);
-    border-radius: 18px;
-    box-shadow: 0 10px 20px var(--sombra);
-    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 18px var(--sombra);
+    transition: var(--transition);
 }
 
-.card button {
-    margin-top: 15px;
+.diferencial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px var(--sombra);
 }
 
-#servicos_main {
-    align-content: center;
-    padding: 5%;
-    padding-top: 30px;
-    display: flexbox;
+.icone {
+    min-width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cards);
+    color: var(--cabecalho);
+    border-radius: 12px;
+    font-family: serif;
+    font-size: 38px;
 }
 
-#servicos_main h1 {
-    padding: 0;
+.diferencial h3 {
+    margin-bottom: 2px;
+    font-size: 1.25rem;
 }
 
+.diferencial p {
+    margin: 0;
+    font-size: .75rem;
+    line-height: 1.25;
+}
+
+.destaques {
+    width: 90%;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.destaques h2 {
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+}
+
+.produtos-destaque {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.produto {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.produto img {
+    width: 100%;
+    height: 185px;
+    display: block;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px var(--sombra);
+    transition: var(--transition);
+}
+
+.produto:hover img {
+    box-shadow: 0 12px 22px var(--sombra);
+}
+
+.produto h3 {
+    margin: 0;
+    color: var(--roxo-texto);
+    font-family: "Montserrat", sans-serif;
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+.cards,
 .servicos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
 }
 
+.card,
 .card_servicos {
-    background: white;
+    padding: 25px;
+    background: var(--branco);
     border: 1px solid var(--borda);
     border-radius: 18px;
     box-shadow: 0 10px 20px var(--sombra);
-    padding: 25px;
+}
+
+.card button {
+    margin-top: 15px;
+}
+
+.card_servicos {
+    transition: var(--transition);
 }
 
 .card_servicos:hover {
     transform: translateY(-5px);
-    transition: var(--transition);
 }
 
-.overlay {
-    position: relative;
-    width: auto;
-    padding: 10px 0px;
-    color: white;
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-    background-color: #32154ac9;
-    border-radius: 10px;
+#servicos_main {
+    padding: 30px 5% 5%;
+    display: flex;
+    flex-direction: column;
 }
 
-.card_servicos:hover .overlay {
-    opacity: 1;
+#servicos_main h1 {
+    padding: 0;
 }
 
 .card_servicos img {
@@ -256,12 +378,36 @@ button:hover {
     display: block;
 }
 
+.overlay {
+    position: relative;
+    width: auto;
+    padding: 10px 0;
+    background: rgba(50, 21, 74, .79);
+    color: var(--branco);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.card_servicos:hover .overlay {
+    opacity: 1;
+}
+
+.Texto-P {
+    margin-bottom: 30px;
+    color: var(--branco);
+    font-size: .7rem;
+}
+
 footer {
     margin-left: 260px;
+    padding: 10px;
     background: var(--cabecalho);
     color: var(--branco);
     text-align: center;
-    padding: 10px;
     border-top: 2px solid var(--botao);
 }
 
@@ -271,7 +417,35 @@ footer p {
     font-size: .95rem;
 }
 
-@media(max-width:768px) {
+@media (max-width: 1000px) {
+    .home-hero {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+        text-align: center;
+    }
+
+    .hero-texto {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .hero-imagem {
+        height: 350px;
+    }
+
+    .diferenciais {
+        grid-template-columns: 1fr;
+    }
+
+    .produtos-destaque {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
 
     header {
         position: relative;
@@ -295,26 +469,48 @@ footer p {
 
     main {
         margin-left: 0;
+        padding-left: 0;
     }
 
     .container {
         width: 92%;
     }
 
-    h1 {
+    .home-hero {
+        padding: 30px 5%;
+    }
+
+    .hero-texto h1 {
         font-size: 2.5rem;
     }
 
-    h2 {
-        font-size: 2rem;
+    .hero-texto p {
+        font-size: 1rem;
     }
 
-    body {
-        font-size: 16px;
+    .hero-imagem {
+        height: 280px;
+    }
+
+    .diferenciais {
+        width: 92%;
+    }
+
+    .produtos-destaque {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     footer {
         margin-left: 0;
     }
+}
 
+@media (max-width: 500px) {
+    .produtos-destaque {
+        grid-template-columns: 1fr;
+    }
+
+    .produto img {
+        height: 220px;
+    }
 }
