@@ -57,8 +57,15 @@ nav {
 
 .logo {
     width: 90px;
-    margin-bottom: 45px;
-    border-radius: 50px;
+    border-radius: 50%;
+    margin-bottom: 18px;
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, .18);
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: scale(1.06) rotate(2deg);
 }
 
 .menu {
@@ -178,8 +185,11 @@ p {
 
 .Texto-P {
     color: var(--branco);
-    font-size: 0.7rem;
-    margin-bottom: 30px;
+    font-size: .72rem;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 35px;
+    opacity: .9;
 }
 
 button {
