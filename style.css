@@ -586,7 +586,6 @@ button:hover {
     font-weight: 500;
 }
 
-.cards,
 .servicos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -626,7 +625,9 @@ button:hover {
 
 .card_servicos img {
     width: 100%;
-    height: auto;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
     display: block;
 }
 
