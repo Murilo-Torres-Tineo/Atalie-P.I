@@ -1,5 +1,5 @@
 /* https://imglink.cc/cdn/tSysD6IzB-.jpg (Imagem da Logo)*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap%27');
 
 :root {
     --bg-principal: #F3EAF4;
@@ -84,7 +84,7 @@ header {
 }
 
 nav {
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,19 +105,58 @@ nav {
     flex: 1;
 }
 
+
 .menu a {
+    position: relative;
     color: var(--branco);
     padding: 15px 18px;
-    border-radius: 12px;
-    font-weight: 500;
+    border-radius: 10px;
     text-decoration: none;
+    font-size: .95rem;
+    font-weight: 500;
     transition: var(--transition);
+    overflow: hidden;
+
 }
 
+.menu a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 0;
+    background: var(--botao);
+    border-radius: 5px;
+    transform: translateY(-50%);
+    transition: var(--transition);
+
+}
+
+
 .menu a:hover {
-    background: rgba(255, 255, 255, .15);
+    background: rgba(255, 255, 255, .10);
     color: var(--botao);
     transform: translateX(8px);
+
+}
+
+
+.menu a:hover::before {
+    height: 60%;
+
+}
+
+.menu a.ativo {
+    background: rgba(255, 255, 255, .14);
+    color: var(--botao);
+
+}
+
+
+.menu a.ativo::before {
+    height: 60%;
+
 }
 
 main {
@@ -203,7 +242,7 @@ button:hover {
 
 .btn-colecao {
     display: inline-block;
-    padding: 13px 25px;
+    padding: 15px 25px;
     border: 2px solid var(--botao);
     text-decoration: none;
     background: var(--cabecalho);
@@ -512,5 +551,392 @@ footer p {
 
     .produto img {
         height: 220px;
+    }
+}
+
+.sobre-container {
+    width: min(1250px, 90%);
+    margin: 0 auto;
+}
+
+.sobre-hero {
+    min-height: 550px;
+    padding: 70px 5%;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre-titulo {
+    position: relative;
+}
+
+.sobre-detalhe,
+.titulo-secao span,
+.diferencial-conteudo>span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--botao);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sobre-titulo h1 {
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.sobre-titulo h2 {
+    margin-bottom: 15px;
+    color: var(--botao);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.sobre-titulo p {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.sobre-introducao {
+    padding: 35px;
+    background: rgba(255, 255, 255, .8);
+    border-left: 5px solid var(--botao);
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 12px 25px var(--sombra);
+}
+
+.sobre-introducao p:last-child {
+    margin-bottom: 0;
+}
+
+.titulo-secao {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.titulo-secao h2 {
+    margin-bottom: 8px;
+}
+
+.titulo-secao p {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.sobre-secao {
+    padding: 40px 5% 80px;
+}
+
+.sobre-servicos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.sobre-card,
+.sobre-bloco {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    box-shadow: 0 8px 18px var(--sombra);
+}
+
+.sobre-card {
+    position: relative;
+    padding: 28px 22px;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.sobre-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: var(--botao);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition);
+}
+
+.sobre-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px var(--sombra);
+}
+
+.sobre-card:hover::before {
+    transform: scaleX(1);
+}
+
+.sobre-icone,
+.bloco-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cards);
+    border-radius: 15px;
+}
+
+.sobre-icone {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 18px;
+    font-size: 28px;
+}
+
+.sobre-card h3,
+.beneficio h3 {
+    font-family: "Montserrat", sans-serif;
+}
+
+.sobre-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+
+.sobre-card p {
+    margin: 0;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.sobre-diferencial {
+    width: 90%;
+    margin: 20px auto 80px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1.5fr .8fr;
+    align-items: center;
+    gap: 50px;
+    background: var(--cabecalho);
+    color: var(--branco);
+    border-radius: 25px;
+    box-shadow: 0 15px 30px var(--sombra);
+    overflow: hidden;
+}
+
+.diferencial-conteudo h2 {
+    color: var(--branco);
+}
+
+.diferencial-conteudo p {
+    color: rgba(255, 255, 255, .88);
+}
+
+.diferencial-frase {
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 18px;
+}
+
+.diferencial-frase span {
+    display: block;
+    height: 30px;
+    color: var(--botao);
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.diferencial-frase p {
+    margin: 15px 0 0;
+    color: var(--branco);
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+}
+
+.sobre-duplo {
+    width: 90%;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.sobre-bloco {
+    padding: 35px;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.sobre-bloco:hover {
+    transform: translateY(-5px);
+}
+
+.bloco-icone {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.sobre-bloco h2 {
+    font-size: 2rem;
+}
+
+.sobre-escolha {
+    padding: 20px 5% 80px;
+}
+
+.sobre-beneficios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.beneficio {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: rgba(255, 255, 255, .8);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    transition: var(--transition);
+}
+
+.beneficio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px var(--sombra);
+}
+
+.beneficio-icone {
+    min-width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cards);
+    border-radius: 14px;
+    font-size: 25px;
+}
+
+.beneficio h3 {
+    margin-bottom: 5px;
+    font-size: 1.15rem;
+}
+
+.beneficio p {
+    margin: 0;
+    font-size: .9rem;
+}
+
+.sobre-final {
+    width: 90%;
+    margin: 0 auto 70px;
+    padding: 65px 30px;
+    text-align: center;
+    background: var(--cards);
+    border-radius: 25px;
+    box-shadow: 0 12px 25px var(--sombra);
+}
+
+.sobre-final h2 {
+    margin-bottom: 10px;
+}
+
+.sobre-final p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+@media (max-width: 1100px) {
+
+    .sobre-hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .sobre-introducao {
+        text-align: left;
+    }
+
+    .sobre-servicos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre-diferencial {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sobre-hero {
+        padding: 40px 2%;
+    }
+
+    .sobre-secao,
+    .sobre-escolha {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .sobre-titulo h1 {
+        font-size: 2.6rem;
+    }
+
+    .sobre-titulo h2 {
+        font-size: 1.15rem;
+    }
+
+    .sobre-introducao {
+        padding: 25px;
+    }
+
+    .sobre-servicos,
+    .sobre-beneficios,
+    .sobre-duplo {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-secao {
+        padding-bottom: 60px;
+    }
+
+    .sobre-escolha {
+        padding-bottom: 60px;
+    }
+
+    .sobre-diferencial,
+    .sobre-duplo,
+    .sobre-final {
+        width: 95%;
+    }
+
+    .sobre-diferencial {
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .sobre-titulo h1 {
+        font-size: 2.2rem;
+    }
+
+    .titulo-secao h2 {
+        font-size: 2rem;
+    }
+
+    .sobre-introducao {
+        border-left: 0;
+        border-top: 4px solid var(--botao);
+        border-radius: 0 0 18px 18px;
+    }
+
+    .sobre-diferencial,
+    .sobre-final {
+        border-radius: 18px;
+    }
+
+    .sobre-final {
+        padding: 45px 20px;
     }
 }
