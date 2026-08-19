@@ -13,11 +13,11 @@
 
 <body>
 
-    <div class="login-container">
+    <div class="login-container" id="loginContainer">
 
         <div class="login-card">
 
-            <img src="https://imglink.cc/cdn/tSysD6IzB-.jpg" alt="Logo" class="logo">
+            <img src="https://i.imgur.com/DnPA7DT.png" alt="Logo" class="logo">
 
             <h1>Bem-vindo</h1>
 
@@ -25,13 +25,13 @@
                 Faça login para acessar sua conta.
             </p>
 
-            <form>
+            <form id="loginForm">
 
                 <div class="input-box">
 
                     <i class="bi bi-envelope-fill"></i>
 
-                    <input type="email" placeholder="Seu e-mail" required>
+                    <input type="email" id="email" placeholder="Seu e-mail" required>
 
                 </div>
 
@@ -39,7 +39,7 @@
 
                     <i class="bi bi-lock-fill"></i>
 
-                    <input type="password" placeholder="Sua senha" required>
+                    <input type="password" id="senha" placeholder="Sua senha" required>
 
                 </div>
 
@@ -89,13 +89,55 @@
 
             <a href="index.html" class="voltar-link">
 
-            <i class="bi bi-arrow-left"></i>
+                <i class="bi bi-arrow-left"></i>
 
-            Voltar para a página inicial
+                Voltar para a página inicial
 
         </div>
 
     </div>
+
+    <div class="video-stage hidden" id="videoStage" aria-live="polite">
+        <video id="loginVideo" autoplay muted playsinline>
+            <source src="./video - logo/Animated_brand_logo_reveal_202608181915.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+        </video>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginContainer = document.getElementById('loginContainer');
+        const videoStage = document.getElementById('videoStage');
+        const loginVideo = document.getElementById('loginVideo');
+
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            if (!loginForm.checkValidity()) {
+                loginForm.reportValidity();
+                return;
+            }
+
+            loginContainer.classList.add('hidden');
+            videoStage.classList.remove('hidden');
+            loginVideo.currentTime = 0;
+
+            loginVideo.play().catch(function () {
+                videoStage.classList.add('hidden');
+                loginContainer.classList.remove('hidden');
+            });
+        });
+
+        loginVideo.addEventListener('ended', function () {
+            window.location.href = 'index.html';
+        });
+
+        loginVideo.addEventListener('error', function () {
+            console.error('Erro ao carregar o vídeo de login.');
+            videoStage.classList.add('hidden');
+            loginContainer.classList.remove('hidden');
+        });
+    </script>
 
 </body>
 
