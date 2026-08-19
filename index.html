@@ -1,191 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | LM Criações</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login | Ateliê LM Criações</title>
+
+    <link rel="stylesheet" href="login-style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-
-<style>
-    .video-stage {
-        position: fixed;
-        inset: 0;
-
-        width: 100vw;
-        height: 100vh;
-
-        background: #000;
-
-        z-index: 9999;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .video-stage.hidden {
-        display: none;
-    }
-
-    .video-stage video {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-    }
-</style>
 
 <body>
 
-    <header>
+    <div class="login-container" id="loginContainer">
+        <div class="login-card">
+            <img src="https://i.imgur.com/DnPA7DT.png" alt="Logo" class="logo">
 
-        <nav>
+            <h1>Bem-vindo</h1>
 
-            <img class="logo" src="https://imglink.cc/cdn/tSysD6IzB-.jpg" alt="Logo">
-            <p class="Texto-P">Feito com carinho, pensado para você!</p>
+            <p>
+                Faça login para acessar sua conta.
+            </p>
 
-            <div class="menu">
-                <a href="index.html" class="ativo">Home</a>
-                <a href="produtos.html">Produtos</a>
-                <a href="servicos.html">Serviços</a>
-                <a href="contato.html">Contato</a>
-                <a href="Sobre.html">Sobre Nós</a>
-                <a href="login.html" class="btn-sair">Sair</a>
-            </div>
+            <form id="loginForm">
 
-        </nav>
+                <div class="input-box">
 
-    </header>
+                    <i class="bi bi-envelope-fill"></i>
 
-    <main>
+                    <input type="email" id="email" placeholder="Seu e-mail" required>
 
-        <section class="home-hero">
+                </div>
 
-            <div class="hero-texto">
-                <h1>Sua História,<br>Nosso Papel.</h1>
+                <div class="input-box">
 
-                <p>
-                    Cadernos, Agendas e Papelaria
-                    Personalizada com a Alma do
-                    Nosso Ateliê.
-                </p>
+                    <i class="bi bi-lock-fill"></i>
 
-                <a href="produtos.html" class="btn-colecao">
-                    Explorar a Coleção
+                    <input type="password" id="senha" placeholder="Sua senha" required>
+
+                </div>
+
+                <button type="submit">
+                    Entrar
+                </button>
+
+                <div class="divider">
+                    <span>ou continue com</span>
+                </div>
+
+                <div class="social-login">
+
+                    <a href="#" class="social-btn instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" class="social-btn google">
+                        <i class="bi bi-google"></i>
+                    </a>
+
+                    <a href="#" class="social-btn facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                </div>
+
+            </form>
+
+            <div class="links">
+
+                <a href="esqueci-senha.html">
+                    Esqueceu sua senha?
                 </a>
-            </div>
 
-            <div class="hero-imagem">
-                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80"
-                    alt="Papelaria personalizada">
-            </div>
-
-        </section>
-
-        <section class="diferenciais">
-
-            <div class="diferencial">
-                <div class="icone">♡</div>
-
-                <div>
-                    <h3>Artesanal</h3>
-                    <p>
-                        Repletos de detalhes e
-                        carinho artesanal.
-                    </p>
-                </div>
-            </div>
-
-            <div class="diferencial">
-                <div class="icone">♢</div>
-
-                <div>
-                    <h3>Exclusivo</h3>
-                    <p>
-                        Agendas e papelaria
-                        personalizada e exclusiva.
-                    </p>
-                </div>
-            </div>
-
-            <div class="diferencial">
-                <div class="icone">♧</div>
-
-                <div>
-                    <h3>Sustentável</h3>
-                    <p>
-                        Carinho no papel para um
-                        futuro sustentável.
-                    </p>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="destaques" class="destaques">
-
-            <h2>Nossos Destaques</h2>
-
-            <div class="produtos-destaque">
-
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=600&q=80"
-                        alt="Diário de sonhos">
-
-                    <h3>Diário de Sonhos</h3>
-                </div>
-
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80"
-                        alt="Cartões">
-
-                    <h3>Cartões Gratidão</h3>
-                </div>
-
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
-                        alt="Papelaria personalizada">
-
-                    <h3>Papelaria Personalizada</h3>
-                </div>
-
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80"
-                        alt="Caderno roxo">
-
-                    <h3>Agenda Personalizada</h3>
-                </div>
+                <a href="cadastro.html">
+                    Criar conta
+                </a>
 
             </div>
 
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>© 2026 Ateliê LM Criações – Todos os direitos reservados.</p>
         </div>
-    </footer>
-
-    <div class="video-stage hidden" id="videoStage">
-
-        <video id="loginVideo" autoplay muted playsinline preload="auto">
-
-            <source
-                src="https://res.cloudinary.com/dpfxm4tb/video/upload/v1787179783/Animated_brand_logo_reveal_202608181915.mp4"
-                type="video/mp4">
-
-            Seu navegador não suporta vídeo HTML5.
-
-        </video>
 
     </div>
 
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="video-index.js"></script>
+
+    <script src="video-teste.js"></script>
 
 </body>
 
