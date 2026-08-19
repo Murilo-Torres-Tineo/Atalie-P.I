@@ -8,6 +8,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<style>
+    .video-stage {
+        position: fixed;
+        inset: 0;
+
+        width: 100vw;
+        height: 100vh;
+
+        background: #000;
+
+        z-index: 9999;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .video-stage.hidden {
+        display: none;
+    }
+
+    .video-stage video {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+</style>
+
 <body>
 
     <header>
@@ -140,6 +169,23 @@
             <p>© 2026 Ateliê LM Criações – Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <div class="video-stage hidden" id="videoStage">
+
+        <video id="loginVideo" autoplay muted playsinline preload="auto">
+
+            <source
+                src="https://res.cloudinary.com/dpfxm4tb/video/upload/v1787179783/Animated_brand_logo_reveal_202608181915.mp4"
+                type="video/mp4">
+
+            Seu navegador não suporta vídeo HTML5.
+
+        </video>
+
+    </div>
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="video-index.js"></script>
 
 </body>
 

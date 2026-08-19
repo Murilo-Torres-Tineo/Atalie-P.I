@@ -1,44 +1,43 @@
-const botaoTeste = document.getElementById("botaoTeste");
-const videoStage = document.getElementById("videoStage");
-const loginVideo = document.getElementById("loginVideo");
+const loginForm = document.getElementById("loginForm");
 
+if (loginForm) {
 
-botaoTeste.addEventListener("click", function () {
+    loginForm.addEventListener("submit", function (event) {
 
-    console.log("Botão clicado.");
+        event.preventDefault();
 
-    videoStage.classList.remove("hidden");
-    botaoTeste.classList.add("hidden");
+        if (!loginForm.checkValidity()) {
+            loginForm.reportValidity();
+            return;
+        }
 
-    loginVideo.currentTime = 0;
+        const email = document.getElementById("email").value.trim();
+        const senha = document.getElementById("senha").value;
 
-    loginVideo.play()
-        .then(function () {
+        const usuarioSalvo = localStorage.getItem("usuario");
 
-            console.log("Vídeo iniciado com sucesso.");
+        if (!usuarioSalvo) {
+            alert("Nenhuma conta cadastrada. Crie uma conta primeiro.");
+            return;
+        }
 
-        })
-        .catch(function (erro) {
+        const usuario = JSON.parse(usuarioSalvo);
 
-            console.error("Erro ao reproduzir o vídeo:", erro);
+        if (email !== usuario.email || senha !== usuario.senha) {
+            alert("E-mail ou senha incorretos.");
+            return;
+        }
 
-        });
+        localStorage.setItem("logado", "true");
+        localStorage.setItem("usuarioNome", usuario.nome);
 
-});
+        localStorage.setItem("mostrarVideo", "true");
 
+        console.log("Login realizado!");
+        console.log("Vídeo será exibido no index.");
 
-loginVideo.addEventListener("ended", function () {
+        window.location.href = "index.html";
 
-    console.log("Vídeo terminou.");
+    });
 
-    videoStage.classList.add("hidden");
-    botaoTeste.classList.remove("hidden");
-
-});
-
-
-loginVideo.addEventListener("error", function () {
-
-    console.error("Erro ao carregar o vídeo.");
-
-});
+}
