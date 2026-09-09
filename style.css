@@ -188,6 +188,41 @@ nav {
 
 }
 
+.menu-hamburguer {
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, .10);
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    transition: .3s;
+}
+
+.menu-hamburguer:hover {
+    background: rgba(255, 255, 255, .18);
+}
+
+.menu-hamburguer span {
+    width: 24px;
+    height: 3px;
+
+    background: var(--branco);
+    border-radius: 5px;
+
+    transition: .3s;
+}
+
 main {
     margin-left: 260px;
     padding-left: 30px;
@@ -696,6 +731,92 @@ footer p {
 
     .produtos-destaque {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+        height: auto;
+        min-height: 80px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        padding: 15px 20px;
+
+        background: #4D1F62;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .Texto-P {
+        display: none;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .menu {
+        display: flex;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px 20px 20px;
+        box-sizing: border-box;
+
+        background: #4D1F62;
+
+        flex-direction: column;
+        gap: 5px;
+
+        z-index: 1000;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        transition: .3s ease;
+
+        box-shadow: 0 8px 15px rgba(0, 0, 0, .15);
+    }
+
+    .menu.aberto {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .menu a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .menu a:hover {
+        transform: translateX(4px);
+    }
+
+    .menu-hamburguer.aberto span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-hamburguer.aberto span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburguer.aberto span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 
