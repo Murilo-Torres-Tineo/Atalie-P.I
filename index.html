@@ -9,35 +9,6 @@
     <script src="menu-ham.js"></script>
 </head>
 
-<style>
-    .video-stage {
-        position: fixed;
-        inset: 0;
-
-        width: 100vw;
-        height: 100vh;
-
-        background: #000;
-
-        z-index: 9999;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .video-stage.hidden {
-        display: none;
-    }
-
-    .video-stage video {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-    }
-</style>
-
 <body>
 
     <header>
@@ -56,12 +27,8 @@
             </button>
 
             <div class="menu">
-                <a href="index.html" class="ativo">Home</a>
-                <a href="produtos.html">Produtos</a>
-                <a href="servicos.html">Serviços</a>
-                <a href="contato.html">Contato</a>
-                <a href="Sobre.html">Sobre Nós</a>
-                <a href="login.html" class="btn-sair">Sair</a>
+                <a href="index.html" class="ativo">Vitrine</a>
+                <a href="login.html" class="btn-sair">Entrar</a>
             </div>
 
         </nav>
@@ -69,102 +36,159 @@
 
     <main>
 
-        <section class="home-hero">
+        <section class="box">
 
-            <div class="hero-texto">
-                <h1>Sua História,<br>Nosso Papel.</h1>
+            <div class="conteudo">
 
-                <p>
-                    Cadernos, Agendas e Papelaria
-                    Personalizada com a Alma do
-                    Nosso Ateliê.
-                </p>
+                <div class="titulo">
 
-                <a href="produtos.html" class="btn-colecao">
-                    Explorar a Coleção
-                </a>
-            </div>
+                    <span>Nossa papelaria personalizada, onde cada detalhe é cuidadosamente elaborado para
+                        refletir sua história e estilo.</span>
 
-            <div class="hero-imagem">
-                <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80"
-                    alt="Papelaria personalizada">
-            </div>
+                    <h1>
+                        Sua História,<br>Nosso Papel.
+                    </h1>
 
-        </section>
-
-        <section class="diferenciais">
-
-            <div class="diferencial">
-                <div class="icone">♡</div>
-
-                <div>
-                    <h3>Artesanal</h3>
                     <p>
-                        Repletos de detalhes e
-                        carinho artesanal.
+                        Cadernos, Agendas e Papelaria Personalizada com a Alma do Nosso Ateliê.
                     </p>
-                </div>
-            </div>
 
-            <div class="diferencial">
-                <div class="icone">♢</div>
-
-                <div>
-                    <h3>Exclusivo</h3>
-                    <p>
-                        Agendas e papelaria
-                        personalizada e exclusiva.
-                    </p>
-                </div>
-            </div>
-
-            <div class="diferencial">
-                <div class="icone">♧</div>
-
-                <div>
-                    <h3>Sustentável</h3>
-                    <p>
-                        Carinho no papel para um
-                        futuro sustentável.
-                    </p>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="destaques" class="destaques">
-
-            <h2>Nossos Destaques</h2>
-
-            <div class="produtos-destaque">
-
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=600&q=80"
-                        alt="Diário de sonhos">
-
-                    <h3>Diário de Sonhos</h3>
                 </div>
 
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80"
-                        alt="Cartões">
-
-                    <h3>Cartões Gratidão</h3>
-                </div>
-
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
+                <div class="hero-imagem">
+                    <img src="https://images.unsplash.com/photo-1568871391149-449702439177?q=80&w=1516&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Papelaria personalizada">
-
-                    <h3>Papelaria Personalizada</h3>
                 </div>
+        </section>
 
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80"
-                        alt="Caderno roxo">
+        <h2>Um pouco dos nossos Serviços!</h2>
 
-                    <h3>Agenda Personalizada</h3>
-                </div>
+        <div class="servicos">
+
+            <div class="card_servicos">
+                <img src="https://imglink.cc/cdn/hP9dumNWrf.jpg" alt="Encadernações" class="img_servicos">
+                <h3>Encadernações</h3>
+                <div class="overlay">Diversos modelos de espiral, wire-o e acabamentos personalizados</div>
+            </div>
+            <div class="card_servicos">
+                <img src="https://imglink.cc/cdn/GuUOpI1HMr.jpg" alt="Impressão" class="img_servicos">
+                <h3>Impressão</h3>
+                <div class="overlay">Impressões coloridas e preto e branco em alta qualidade!</div>
+            </div>
+            <div class="card_servicos">
+                <img src="https://imglink.cc/cdn/tc0ggeTQ1N.jpg" alt="Plastificação" class="img_servicos">
+                <h3>Plastificação</h3>
+                <div class="overlay">Proteção para documentos, certificados, cardápios e muito mais!</div>
+            </div>
+        </div>
+
+        <section class="box">
+
+            <div class="cont">
+
+                <article class="sect">
+
+                    <div class="icon">
+                        📞
+                    </div>
+
+                    <h3>
+                        Telefone / WhatsApp
+                    </h3>
+
+                    <p>
+                        (13) 98200-0746
+                    </p>
+
+                </article>
+
+                <article class="sect">
+
+                    <div class="icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Instagram
+                    </h3>
+
+                    <p>
+                        @atelielmcriacoes
+                    </p>
+
+                </article>
+
+                <article class="sect">
+
+                    <div class="icon">
+                        📩
+                    </div>
+
+                    <h3>
+                        E-mail
+                    </h3>
+
+                    <p>
+                        atelielmcriacoes@gmail.com
+                    </p>
+
+                </article>
+
+                <article class="sect">
+
+                    <div class="icon">
+                        🗺️
+                    </div>
+
+                    <h3>
+                        Cidade
+                    </h3>
+
+                    <p>
+                        Santos / SP
+                    </p>
+
+                </article>
+
+                <article class="sect">
+
+                    <div class="icon">
+                        🕛
+                    </div>
+
+                    <h3>
+                        Horário de Atendimento
+                    </h3>
+
+                    <p>
+                        Segunda a sexta: 08h às 21h
+                    </p>
+
+                    <p>
+                        Sábado: 09h às 19h
+                    </p>
+
+                </article>
+
+                <article class="sect">
+
+                    <div class="icon">
+                        💵
+                    </div>
+
+                    <h3>
+                        Formas de Pagamento
+                    </h3>
+
+                    <p>
+                        Pix
+                    </p>
+
+                    <p>
+                        Dinheiro
+                    </p>
+
+                </article>
 
             </div>
 
@@ -177,23 +201,6 @@
             <p>© 2026 Ateliê LM Criações – Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <div class="video-stage hidden" id="videoStage">
-
-        <video id="loginVideo" autoplay muted playsinline preload="auto">
-
-            <source
-                src="https://res.cloudinary.com/dpfxm4tb/video/upload/v1787179783/Animated_brand_logo_reveal_202608181915.mp4"
-                type="video/mp4">
-
-            Seu navegador não suporta vídeo HTML5.
-
-        </video>
-
-    </div>
-
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="video-index.js"></script>
 
 </body>
 

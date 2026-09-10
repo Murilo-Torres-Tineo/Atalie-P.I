@@ -36,7 +36,7 @@ if (loginForm) {
         console.log("Login realizado!");
         console.log("Vídeo será exibido no index.");
 
-        window.location.href = "index.html";
+        window.location.href = "home.html";
 
     });
 

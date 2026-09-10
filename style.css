@@ -233,9 +233,17 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 55px 35px;
+    padding: 10px;
 }
 
+.box-servicos {
+    min-height: calc(100vh - 55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin-left: 10%;
+}
 
 .conteudo {
     width: 100%;
@@ -248,7 +256,6 @@ main {
     animation: aparecer .7s ease;
 }
 
-
 .titulo span {
     display: block;
     color: var(--botao);
@@ -257,7 +264,6 @@ main {
     letter-spacing: 3px;
     margin-bottom: 8px;
 }
-
 
 .titulo h1 {
     position: relative;
@@ -296,7 +302,7 @@ main {
 .cont {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 20px;
 }
 
 section {
@@ -627,27 +633,6 @@ button:hover {
     gap: 25px;
 }
 
-.card,
-.card_servicos {
-    padding: 25px;
-    background: var(--branco);
-    border: 1px solid var(--borda);
-    border-radius: 18px;
-    box-shadow: 0 10px 20px var(--sombra);
-}
-
-.card button {
-    margin-top: 15px;
-}
-
-.card_servicos {
-    transition: var(--transition);
-}
-
-.card_servicos:hover {
-    transform: translateY(-5px);
-}
-
 #servicos_main {
     padding: 30px 5% 5%;
     display: flex;
@@ -658,30 +643,68 @@ button:hover {
     padding: 0;
 }
 
+.card,
+.card_servicos {
+    padding: 25px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 10px 20px var(--sombra);
+    transition: var(--transition);
+}
+
+.card_servicos:hover {
+    transform: translateY(-5px);
+}
+
 .card_servicos img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     object-position: center;
     display: block;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.card_servicos h3 {
+    color: var(--roxo-texto);
+    font-family: "Playfair Display", serif;
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin-bottom: 12px;
 }
 
 .overlay {
-    position: relative;
-    width: auto;
-    padding: 10px 0;
-    background: rgba(50, 21, 74, .79);
+    width: 100%;
+    min-height: 100px;
+    padding: 16px 18px;
+
+    background: rgba(50, 21, 74, .92);
     color: var(--branco);
+
     border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity var(--transition);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition: transform var(--transition);
 }
 
 .card_servicos:hover .overlay {
-    opacity: 1;
+    transform: translateY(-6px);
 }
 
 .Texto-P {
@@ -765,7 +788,7 @@ footer p {
     }
 
     .menu {
-        display: flex;
+        display: none;
 
         position: absolute;
         top: 100%;
@@ -783,19 +806,11 @@ footer p {
 
         z-index: 1000;
 
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-
-        transition: .3s ease;
-
         box-shadow: 0 8px 15px rgba(0, 0, 0, .15);
     }
 
     .menu.aberto {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+        display: flex;
     }
 
     .menu a {
