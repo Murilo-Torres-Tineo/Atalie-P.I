@@ -1,4 +1,13 @@
 const loginForm = document.getElementById("loginForm");
+const loginAviso = document.getElementById("loginAviso");
+
+function mostrarAvisoLogin(mensagem) {
+
+    loginAviso.textContent = mensagem;
+    loginAviso.className = "form-notice form-notice--erro";
+    loginAviso.hidden = false;
+
+}
 
 if (loginForm) {
 
@@ -17,14 +26,14 @@ if (loginForm) {
         const usuarioSalvo = localStorage.getItem("usuario");
 
         if (!usuarioSalvo) {
-            alert("Nenhuma conta cadastrada. Crie uma conta primeiro.");
+            mostrarAvisoLogin("Nenhuma conta cadastrada. Crie uma conta primeiro.");
             return;
         }
 
         const usuario = JSON.parse(usuarioSalvo);
 
         if (email !== usuario.email || senha !== usuario.senha) {
-            alert("E-mail ou senha incorretos.");
+            mostrarAvisoLogin("E-mail ou senha incorretos.");
             return;
         }
 
