@@ -1,4 +1,13 @@
 const cadastroForm = document.getElementById("cadastroForm");
+const cadastroAviso = document.getElementById("cadastroAviso");
+
+function mostrarAvisoCadastro(mensagem, tipo = "erro") {
+
+    cadastroAviso.textContent = mensagem;
+    cadastroAviso.className = `form-notice form-notice--${tipo}`;
+    cadastroAviso.hidden = false;
+
+}
 
 if (cadastroForm) {
 
@@ -21,14 +30,14 @@ if (cadastroForm) {
 
         if (senha !== confirmarSenha) {
 
-            alert("As senhas precisam ser iguais.");
+            mostrarAvisoCadastro("As senhas precisam ser iguais.");
 
             return;
         }
 
         if (localStorage.getItem("usuario")) {
 
-            alert("Já existe uma conta cadastrada neste navegador.");
+            mostrarAvisoCadastro("Já existe uma conta cadastrada neste navegador.");
 
             return;
         }
@@ -42,9 +51,11 @@ if (cadastroForm) {
 
         localStorage.setItem("usuario", JSON.stringify(usuario));
 
-        alert("Cadastro realizado com sucesso! Faça login para acessar o site.");
+        mostrarAvisoCadastro("Cadastro realizado com sucesso! Redirecionando para o login...", "sucesso");
 
-        window.location.href = "login.html";
+        window.setTimeout(function () {
+            window.location.href = "login.html";
+        }, 1500);
 
     });
 
