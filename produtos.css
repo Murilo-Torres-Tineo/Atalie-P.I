@@ -295,7 +295,7 @@ button:hover {
 .titulo span {
     display: block;
     color: var(--botao);
-    font-size: .75rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 3px;
     margin-bottom: 8px;
@@ -327,7 +327,7 @@ button:hover {
     max-width: 600px;
     margin: 0 auto;
     color: var(--textinho);
-    font-size: .95rem;
+    font-size: 1.25rem;
 }
 
 footer {
